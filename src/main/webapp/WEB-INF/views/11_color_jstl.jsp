@@ -15,22 +15,29 @@
 
 </head>
 <body>
+	
+	<!-- c:choose
+		 여러 상황 중 한가지 선택
+		 c:when, c:otherwise 서브태그      
+	-->
+	<c:choose>
 
-	<%
-	if( "1".equals( request.getParameter("color") ) ) {	
-	%>
+	<c:when test="${param.color == 1 }">	
 		<span style="color: red">빨강</span>
-	<%
-	} else if( "2".equals( request.getParameter("color") ) ) {	
-	%>
+	</c:when>
+
+	<c:when test="${param.color == 2 }">
 		<span style="color: green">녹색</span>
-	<%
-	} else if( "3".equals( request.getParameter("color") ) ) {	
-	%>
+	</c:when>
+
+	<c:when test="${param.color == 3 }">
 		<span style="color: blue">파랑</span>
-	<%
-	}
-	%>
+	</c:when>
+
+	<c:otherwise>
+		<span style="color: black">검정</span>
+	</c:otherwise>
+	</c:choose>
 
 
 	
